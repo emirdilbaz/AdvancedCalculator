@@ -224,31 +224,30 @@ int main() {
     double num1, num2, result;
     int choice;
     string op;
+    char again;
 
-    print_welcome_banner();
-    cout << "  ******************************************" << endl;
-    cout << "  *        SELECT A CALCULATOR MODE        *" << endl;
-    cout << "  ******************************************" << endl;
+    do {
+        print_welcome_banner();
+        cout << "  ******************************************" << endl;
+        cout << "  *        SELECT A CALCULATOR MODE        *" << endl;
+        cout << "  ******************************************" << endl;
 
-    cout << "\n           --- Basic Operations ---\n";
-    cout << "[1] Basic Arithmetic (+, -, *, /)\n";
-    cout << "[2] Trigonometric Functions (sin, cos, tan, cot, arcsin, arccos, arctan, arccot)\n";
-    cout << "[3] Log/Exponential (log10, ln, sqrt, pow, exp)\n";
+        cout << "\n           --- Basic Operations ---\n";
+        cout << "[1] Basic Arithmetic (+, -, *, /)\n";
+        cout << "[2] Trigonometric Functions (sin, cos, tan, cot, arcsin, arccos, arctan, arccot)\n";
+        cout << "[3] Log/Exponential (log10, ln, sqrt, pow, exp)\n";
+        cout << "\n           --- Math Utilities ---\n";
+        cout << "[4] Modulus / Absolute / Factorial\n";
+        cout << "[5] Number System Conversion (dec2bin, bin2dec, dec2hex, hex2dec)\n";
+        cout << "[6] Mid-Level Math Tools (gcd, lcm, isprime, randint, deg2rad, rad2deg)\n";
+        cout << "[7] Advanced Complex Number Tools (complex_add, complex_mul, norm, conj)\n";
+        cout << "\n           --- Matrix and Data Tools ---\n";
+        cout << "[8] Matrix Operations\n";
+        cout << "[9] Statistics Tools (mean, median, min, max)\n";
+        cout << "[10] Unit Converter (length, weight, temp)";
 
-    cout << "\n           --- Math Utilities ---\n";
-    cout << "[4] Modulus / Absolute / Factorial\n";
-    cout << "[5] Number System Conversion (dec2bin, bin2dec, dec2hex, hex2dec)\n";
-    cout << "[6] Mid-Level Math Tools (gcd, lcm, isprime, randint, deg2rad, rad2deg)\n";
-    cout << "[7] Advanced Complex Number Tools(complex_add, complex_mul, norm, conj\n";
-
-    cout << "\n           --- Matrix and Data Tools ---\n";
-    cout << "[8] Matrix Operations\n";
-    cout << "[9] Statistics Tools (mean, median, min, max)\n";
-    cout << "[10] Unit Converter (length, weight, temp)\n";
-
-    cout << "\nYour choice: ";
-
-    cin >> choice;
+        cout << "\nYour choice: ";
+        cin >> choice;
 
     switch (choice) {
     case 1:
@@ -518,5 +517,11 @@ int main() {
     if (choice >= 1 && choice <= 4)
         cout << "Result: " << result << endl;
 
+    cout << "\nWould you like to perform another operation? (y/n):\n" << endl;
+    cin >> again;
+
+    } while (again == 'y' || again == 'Y');
+
+    cout << "Thank you for using the Advanced Calculator!" << endl;
     return 0;
 }
