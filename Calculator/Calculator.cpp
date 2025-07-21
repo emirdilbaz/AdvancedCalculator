@@ -509,9 +509,9 @@ int main() {
         unit_converter();
         break;
 
-        default:
+      default:
         cout << "Invalid category selection!" << endl;
-        return 0;
+        break;
     }
 
     if (choice >= 1 && choice <= 4)
